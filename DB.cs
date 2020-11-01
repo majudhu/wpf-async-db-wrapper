@@ -1,6 +1,6 @@
-﻿using MySqlConnector;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Data;
+using System.Data.SqlClient;
 using System.Threading.Tasks;
 
 namespace db_controller
@@ -15,10 +15,10 @@ namespace db_controller
 
         public async Task<int> nonQuery(string query, Dictionary<string, object> values)
         {   // UPDATE AND DELETE queries, returns number of rows affected
-            using (var connection = new MySqlConnection(CON_STR))
+            using (var connection = new SqlConnection(CON_STR))
             {
                 await connection.OpenAsync();
-                using (var command = new MySqlCommand(query, connection))
+                using (var command = new SqlCommand(query, connection))
                 {
                     foreach (var value in values)
                         command.Parameters.AddWithValue(value.Key, value.Value);
@@ -29,10 +29,10 @@ namespace db_controller
         }
         public async Task<object> scalar(string query, Dictionary<string, object> values)
         {   // fetch single row single column
-            using (var connection = new MySqlConnection(CON_STR))
+            using (var connection = new SqlConnection(CON_STR))
             {
                 await connection.OpenAsync();
-                using (var command = new MySqlCommand(query, connection))
+                using (var command = new SqlCommand(query, connection))
                 {
                     foreach (var value in values)
                         command.Parameters.AddWithValue(value.Key, value.Value);
@@ -44,10 +44,10 @@ namespace db_controller
         public async Task<DataTable> query(string query, Dictionary<string, object> values)
         {   // SELECT queries
             var dataTable = new DataTable();
-            using (var connection = new MySqlConnection(CON_STR))
+            using (var connection = new SqlConnection(CON_STR))
             {
                 await connection.OpenAsync();
-                using (var command = new MySqlCommand(query, connection))
+                using (var command = new SqlCommand(query, connection))
                 {
                     foreach (var value in values)
                         command.Parameters.AddWithValue(value.Key, value.Value);

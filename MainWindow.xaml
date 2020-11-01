@@ -16,7 +16,7 @@
         <Button x:Name="btnScalar" Content="Execute Scalar" HorizontalAlignment="Left" VerticalAlignment="Top" Width="119" Margin="227,173,0,0" Click="btnScalar_Click" IsEnabled="False"/>
         <Button x:Name="btnQuery" Content="Execute Query" HorizontalAlignment="Left" VerticalAlignment="Top" Width="124" Margin="66,173,0,0" Click="btnQuery_Click" IsEnabled="False"/>
         <Label x:Name="label_Copy2" Content="connection" HorizontalAlignment="Left" Margin="35,38,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.243,0.601"/>
-        <TextBox x:Name="txtConnectionString" HorizontalAlignment="Left" Height="34" TextWrapping="Wrap" VerticalAlignment="Top" Width="320" Margin="109,41,0,0" Text="Server=localhost;User ID=sa;Password=1234;Database=test;ConvertZeroDateTime=True "/>
+        <TextBox x:Name="txtConnectionString" HorizontalAlignment="Left" Height="34" TextWrapping="Wrap" VerticalAlignment="Top" Width="320" Margin="109,41,0,0" Text="Server=localhost;User ID=sa;Password=1234;Database=test;"/>
         <Button x:Name="btnNonQuery" Content="Execute Non Query" HorizontalAlignment="Left" VerticalAlignment="Top" Width="119" Margin="379,173,0,0" Click="btnNonQuery_Click" IsEnabled="False"/>
         <DataGrid x:Name="dgvData" HorizontalAlignment="Left" Height="165" Margin="45,244,0,0" VerticalAlignment="Top" Width="691"/>
         <GroupBox x:Name="groupBox" Header="Examples" HorizontalAlignment="Left" Height="155" Margin="546,38,-219,0" VerticalAlignment="Top" Width="190" RenderTransformOrigin="0.5,0.333"/>
